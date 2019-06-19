@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2016.2.1 (Build 803U_SU)" ts="2019-06-19 02:17:57">
+<Class name="CarRentalDB.Car">
+<Abstract>1</Abstract>
+<Super>%Persistent,%Populate,%XML.Adaptor,%ZEN.DataModel.Adaptor</Super>
+<TimeChanged>65182,36152.60112</TimeChanged>
+<TimeCreated>65182,36134.996533</TimeCreated>
+
+<Property name="name">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="price">
+<Type>%Integer</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="tankCapacity">
+<Type>%Integer</Type>
+<Required>1</Required>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^CarRentalDB.CarD</DataLocation>
+<DefaultData>CarDefaultData</DefaultData>
+<IdLocation>^CarRentalDB.CarD</IdLocation>
+<IndexLocation>^CarRentalDB.CarI</IndexLocation>
+<StreamLocation>^CarRentalDB.CarS</StreamLocation>
+<Data name="CarDefaultData">
+<Structure>listnode</Structure>
+<Subscript/>
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>name</Value>
+</Value>
+<Value name="3">
+<Value>price</Value>
+</Value>
+<Value name="4">
+<Value>tankCapacity</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="CarRentalDB.Customer">
+<Super>CarRentalDB.Person</Super>
+<TimeChanged>65182,37049.634664</TimeChanged>
+<TimeCreated>65182,36134.442621</TimeCreated>
+
+<Property name="pesel">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="rentals">
+<Type>Rental</Type>
+<Collection>list</Collection>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DefaultData>CustomerDefaultData</DefaultData>
+<ExtentSize>10</ExtentSize>
+<Data name="CustomerDefaultData">
+<Structure>listnode</Structure>
+<Subscript>"Customer"</Subscript>
+<Value name="1">
+<Value>pesel</Value>
+</Value>
+<Value name="2">
+<Value>rentals</Value>
+</Value>
+</Data>
+<Property name="%%CLASSNAME">
+<Selectivity>100.0000%</Selectivity>
+<AverageFieldSize>22</AverageFieldSize>
+</Property>
+<Property name="%%ID">
+<Selectivity>1</Selectivity>
+<AverageFieldSize>2</AverageFieldSize>
+</Property>
+<Property name="firstName">
+<Selectivity>10.0000%</Selectivity>
+<AverageFieldSize>4.9</AverageFieldSize>
+</Property>
+<Property name="lastName">
+<Selectivity>10.0000%</Selectivity>
+<AverageFieldSize>5</AverageFieldSize>
+</Property>
+<Property name="pesel">
+<Selectivity>10.0000%</Selectivity>
+<AverageFieldSize>4.9</AverageFieldSize>
+</Property>
+<Property name="rentals">
+<Selectivity>10.0000%</Selectivity>
+<AverageFieldSize>32.7</AverageFieldSize>
+</Property>
+</Storage>
+</Class>
+
+
+<Class name="CarRentalDB.Employee">
+<Super>CarRentalDB.Person</Super>
+<TimeChanged>65182,36297.630863</TimeChanged>
+<TimeCreated>65182,36134.623285</TimeCreated>
+
+<Property name="position">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="salary">
+<Type>%Integer</Type>
+<Required>1</Required>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DefaultData>EmployeeDefaultData</DefaultData>
+<ExtentSize>10</ExtentSize>
+<Data name="EmployeeDefaultData">
+<Structure>listnode</Structure>
+<Subscript>"Employee"</Subscript>
+<Value name="1">
+<Value>position</Value>
+</Value>
+<Value name="2">
+<Value>salary</Value>
+</Value>
+</Data>
+<Property name="%%CLASSNAME">
+<Selectivity>100.0000%</Selectivity>
+<AverageFieldSize>22</AverageFieldSize>
+</Property>
+<Property name="%%ID">
+<Selectivity>1</Selectivity>
+<AverageFieldSize>1.1</AverageFieldSize>
+</Property>
+<Property name="firstName">
+<Selectivity>10.0000%</Selectivity>
+<AverageFieldSize>4.6</AverageFieldSize>
+</Property>
+<Property name="lastName">
+<Selectivity>10.0000%</Selectivity>
+<AverageFieldSize>5</AverageFieldSize>
+</Property>
+<Property name="position">
+<Selectivity>10.0000%</Selectivity>
+<AverageFieldSize>5</AverageFieldSize>
+</Property>
+<Property name="salary">
+<Selectivity>10.0000%</Selectivity>
+<AverageFieldSize>8.9</AverageFieldSize>
+</Property>
+</Storage>
+</Class>
+
+
+<Class name="CarRentalDB.PassengerCar">
+<Super>CarRentalDB.Car</Super>
+<TimeChanged>65182,36911.286278</TimeChanged>
+<TimeCreated>65182,36135.158744</TimeCreated>
+
+<Property name="seats">
+<Type>%Integer</Type>
+<Required>1</Required>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DefaultData>PassengerCarDefaultData</DefaultData>
+<ExtentSize>500</ExtentSize>
+<Data name="PassengerCarDefaultData">
+<Structure>listnode</Structure>
+<Subscript>"PassengerCar"</Subscript>
+<Value name="1">
+<Value>seats</Value>
+</Value>
+</Data>
+<Property name="%%CLASSNAME">
+<Selectivity>100.0000%</Selectivity>
+<AverageFieldSize>26</AverageFieldSize>
+</Property>
+<Property name="%%ID">
+<Selectivity>1</Selectivity>
+<AverageFieldSize>3</AverageFieldSize>
+</Property>
+<Property name="name">
+<Selectivity>0.2000%</Selectivity>
+<AverageFieldSize>15.95</AverageFieldSize>
+</Property>
+<Property name="price">
+<Selectivity>0.2000%</Selectivity>
+<AverageFieldSize>8.87</AverageFieldSize>
+</Property>
+<Property name="seats">
+<Selectivity>0.2000%</Selectivity>
+<AverageFieldSize>8.88</AverageFieldSize>
+</Property>
+<Property name="tankCapacity">
+<Selectivity>0.2000%</Selectivity>
+<AverageFieldSize>8.87</AverageFieldSize>
+</Property>
+</Storage>
+</Class>
+
+
+<Class name="CarRentalDB.Person">
+<Super>%Persistent,%Populate,%XML.Adaptor,%ZEN.DataModel.Adaptor</Super>
+<TimeChanged>65182,36152.816351</TimeChanged>
+<TimeCreated>65182,36134.227047</TimeCreated>
+
+<Property name="firstName">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="lastName">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Method name="getFullName">
+<Implementation><![CDATA[	WRITE !,"Full name: ", ..firstName, " ", ..lastName
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^CarRentalDB.PersonD</DataLocation>
+<DefaultData>PersonDefaultData</DefaultData>
+<IdLocation>^CarRentalDB.PersonD</IdLocation>
+<IndexLocation>^CarRentalDB.PersonI</IndexLocation>
+<StreamLocation>^CarRentalDB.PersonS</StreamLocation>
+<Data name="PersonDefaultData">
+<Structure>listnode</Structure>
+<Subscript/>
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>firstName</Value>
+</Value>
+<Value name="3">
+<Value>lastName</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="CarRentalDB.Rental">
+<Super>%Persistent,%Populate,%XML.Adaptor,%ZEN.DataModel.Adaptor</Super>
+<TimeChanged>65182,36935.599516</TimeChanged>
+<TimeCreated>65182,36134.79737</TimeCreated>
+
+<Property name="number">
+<Type>%Integer</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="cars">
+<Type>Car</Type>
+<Collection>list</Collection>
+</Property>
+
+<Method name="calculateTotalPrice">
+<Implementation><![CDATA[
+	Set sum = 0
+	For i = 1:1:..cars.Count()
+	{
+		set sum = sum + ..cars.GetAt(i).price
+	}
+	WRITE !,"Total: ", sum,!
+]]></Implementation>
+</Method>
+
+<Method name="printInvoice">
+<Implementation><![CDATA[
+	WRITE !,"Invoice number: ", ..number,!
+	For i = 1:1:..cars.Count()
+	{
+		WRITE ..cars.GetAt(i).name , ": " , ..cars.GetAt(i).price,!
+	}
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^CarRentalDB.RentalD</DataLocation>
+<DefaultData>RentalDefaultData</DefaultData>
+<IdLocation>^CarRentalDB.RentalD</IdLocation>
+<IndexLocation>^CarRentalDB.RentalI</IndexLocation>
+<StreamLocation>^CarRentalDB.RentalS</StreamLocation>
+<ExtentSize>50</ExtentSize>
+<Data name="RentalDefaultData">
+<Structure>listnode</Structure>
+<Subscript/>
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>number</Value>
+</Value>
+<Value name="3">
+<Value>cars</Value>
+</Value>
+</Data>
+<Property name="%%CLASSNAME">
+<Selectivity>100.0000%</Selectivity>
+<AverageFieldSize>1</AverageFieldSize>
+</Property>
+<Property name="%%ID">
+<Selectivity>1</Selectivity>
+<AverageFieldSize>1.82</AverageFieldSize>
+</Property>
+<Property name="cars">
+<Selectivity>2.2222%</Selectivity>
+<AverageFieldSize>32.62</AverageFieldSize>
+</Property>
+<Property name="number">
+<Selectivity>2.0000%</Selectivity>
+<AverageFieldSize>8.92</AverageFieldSize>
+</Property>
+<SQLMap name="IDKEY">
+<BlockCount>-4</BlockCount>
+</SQLMap>
+</Storage>
+</Class>
+
+
+<Class name="CarRentalDB.Truck">
+<Super>CarRentalDB.Car</Super>
+<TimeChanged>65182,36862.520116</TimeChanged>
+<TimeCreated>65182,36135.330425</TimeCreated>
+
+<Property name="capacity">
+<Type>%Integer</Type>
+<Required>1</Required>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DefaultData>TruckDefaultData</DefaultData>
+<ExtentSize>100</ExtentSize>
+<Data name="TruckDefaultData">
+<Structure>listnode</Structure>
+<Subscript>"Truck"</Subscript>
+<Value name="1">
+<Value>capacity</Value>
+</Value>
+</Data>
+<Property name="%%CLASSNAME">
+<Selectivity>100.0000%</Selectivity>
+<AverageFieldSize>19</AverageFieldSize>
+</Property>
+<Property name="%%ID">
+<Selectivity>1</Selectivity>
+<AverageFieldSize>1.92</AverageFieldSize>
+</Property>
+<Property name="capacity">
+<Selectivity>1.0000%</Selectivity>
+<AverageFieldSize>8.94</AverageFieldSize>
+</Property>
+<Property name="name">
+<Selectivity>1.0000%</Selectivity>
+<AverageFieldSize>15.44</AverageFieldSize>
+</Property>
+<Property name="price">
+<Selectivity>1.0000%</Selectivity>
+<AverageFieldSize>8.91</AverageFieldSize>
+</Property>
+<Property name="tankCapacity">
+<Selectivity>1.0000%</Selectivity>
+<AverageFieldSize>8.86</AverageFieldSize>
+</Property>
+</Storage>
+</Class>
+
+
+<Project name="SBD_lab3" LastModified="2019-06-18 10:02:32.439441">
+  <Items>
+    <ProjectItem name="CarRentalDB.Car" type="CLS"></ProjectItem>
+    <ProjectItem name="CarRentalDB.Customer" type="CLS"></ProjectItem>
+    <ProjectItem name="CarRentalDB.Employee" type="CLS"></ProjectItem>
+    <ProjectItem name="CarRentalDB.PassengerCar" type="CLS"></ProjectItem>
+    <ProjectItem name="CarRentalDB.Person" type="CLS"></ProjectItem>
+    <ProjectItem name="CarRentalDB.Rental" type="CLS"></ProjectItem>
+    <ProjectItem name="CarRentalDB.Truck" type="CLS"></ProjectItem>
+  </Items>
+</Project>
+</Export>
